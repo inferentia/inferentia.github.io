@@ -2,22 +2,28 @@
 layout: default
 ---
 
-<div class="home">
+<div class="home" style="float: middle">
 
-  <h1 class="page-heading">Posts</h1>
+  <img src="/photo/Inferentia_cls.png" alt="HTML5 Icon" width="400" height="300">
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+  <h1> An AI Software Company </h1>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+  <br />
+  <p> <i>Products:</i> </p>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+  <table  align="center" style="font-size: large;">
+  <tr >
+    <td align='right'><b>Boy</b>:  </td>
+    <td align='left'>Process Optimization</td>
+  </tr>
+  <tr>
+    <td align='right'><b>Vanilla</b>:  </td>
+    <td align='left'>Data Efficient Machine Learning</td>
+  </tr>
+  <tr>
+    <td align='right'><b>Tesseract</b>:  </td>
+    <td align='left'>Unsupervised Learning and Multi-view Learning</td>
+  </tr>
+  </table>
 </div>
+
