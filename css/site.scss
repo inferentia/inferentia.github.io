@@ -29,14 +29,32 @@ h4 {
 	margin: 0 auto;
 }
 
+body {
+	background-color: $banner-color;
+}
+
 .page-content {
 	padding-top: 0px;
+	padding-bottom: 0px;	
+	background-color: black;
 }
 
 p {
 	font-size: 16pt;
 	text-align: left;
 	font-family: main-font, Verdana;	
+}
+
+a {
+	color: $brand-primary;
+}
+
+a:visited {
+	color: $brand-primary;	
+}
+
+a:hover {
+	color: $brand-primary-dark;
 }
 
 @font-face {
@@ -259,13 +277,14 @@ hr {
 /* contact form */
 
 .contact-container {
+	margin-top: 10%;
 	padding: 32px;
 }
 
 .contact-details {
 	margin-left: 50px;
 	text-align: left;
-	width: 33%;
+	width: auto;
 	/*border: 1px solid blue;*/
 }
 
