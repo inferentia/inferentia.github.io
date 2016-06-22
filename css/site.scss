@@ -3,6 +3,7 @@
 
 
 //HOWTO: align something center horizontally and bottom vertically: http://stackoverflow.com/a/299929/1742518
+//HOWTO: responsive font size: https://css-tricks.com/viewport-sized-typography/
 
 @import "variables";
 @import "bootstrap";
@@ -12,21 +13,23 @@
 h1 {
 	font-family: main-font, Verdana;
 	margin: 0 auto;
+	font-size: 3.5vw;
 }
 
 h2 {
 	font-family: main-font, Verdana;
-	margin: 0 auto;
+	margin: 0 auto;	
 }
 
 h3 {
 	font-family: main-font, Verdana;
 	margin: 0 auto;
+	font-size: 2.5vw;
 }
 
 h4 {
 	font-family: main-font, Verdana;
-	margin: 0 auto;
+	margin: 0 auto;	
 }
 
 body {
@@ -40,7 +43,7 @@ body {
 }
 
 p {
-	font-size: 16pt;
+	font-size: 3vmin;
 	text-align: left;
 	font-family: main-font, Verdana;	
 }
@@ -148,7 +151,8 @@ hr {
 }
 
 .product-container{
-	display: flex;
+	display: flex;	
+	flex-wrap: wrap;
 	justify-content: space-around;
 	padding-top: 64px;
 	padding-bottom: 40px;
@@ -156,22 +160,58 @@ hr {
 
 }
 
-.product {
-	max-width: 20vw;
-}
-
-.product p {
-	margin-top: 32px;
-}
-
-.product hr {
-	margin-left: 0px;
-}
-
 .product-image{
 	width: $default-image-size;
 	height: $default-image-size;		
 	display: block;
+}
+
+@media (min-width: 300px) {
+	.product {		
+		max-width: 60vw;
+	}
+
+	.visibile-on-wide {
+		visibility: hidden;
+		height: 0px;
+		margin: 0px;
+		padding: 0px;
+	}
+
+	.product p {
+		margin-top: 16px;
+	}
+
+	.visible-on-narrow{
+		visibility: visible;		
+	}	
+}
+
+@media (min-width: 800px) {
+	.product {
+		max-width: 20vw;				
+	}
+
+	.visibile-on-wide {
+		visibility: visible;
+	}
+
+	.visibile-on-narrow {
+		visibility: hidden;
+		height: 0px;
+		margin: 0px;
+		padding: 0px;
+	}
+
+	.product p {
+		margin-top: 32px;
+	}	
+}
+
+
+
+.product hr {
+	margin-left: 0px;
 }
 
 /* company members */
@@ -230,6 +270,27 @@ hr {
 	margin-top: 20%;	
 }
 
+@media (min-width: 300px) {
+	.grid-container {
+		flex-direction: row;
+	}
+
+	.grid-item {
+		width: 60vw;
+	}
+}
+
+@media (min-width: 800px) {
+	.grid-container {
+		flex-direction: column;		
+	}
+
+	.grid-item {
+		width: 40vw; 	
+	}
+}
+
+
 /* twitter feed */
 
 .twitter-feed-container {
@@ -281,16 +342,10 @@ hr {
 	padding: 32px;
 }
 
-.contact-details {
-	margin-left: 50px;
+.contact-details {	
 	text-align: left;
 	width: auto;
 	/*border: 1px solid blue;*/
-}
-
-.contact-form {
-	width: 50%;	
-	/*border: 1px solid red;*/
 }
 
 .contact-content {	
@@ -319,9 +374,44 @@ hr {
 	border-radius: 0px;
 }
 
-
 //HOWTO: change input placeholder color in bootstrap: http://stackoverflow.com/a/20774043/1742518
 .form-control::-webkit-input-placeholder { color: $brand-primary; }
 .form-control:-moz-placeholder { color: $brand-primary; }
 .form-control::-moz-placeholder { color: $brand-primary; }
 .form-control:-ms-input-placeholder { color: $brand-primary; }
+
+
+
+@media (min-width: 300px) {
+	.contact-content {
+		flex-direction: column;			
+		margin: 0px;					
+	}	
+	
+	.contact-details {
+		margin-left: 0px;
+	}
+
+	.contact-form {
+		width: 60vw;
+		margin-left: 0px;		
+	}
+}
+
+@media (min-width: 800px) {
+	.contact-content {
+		flex-direction: row;		
+		margin-top: 32px;
+		margin-left: auto;
+		margin-right: auto;
+	}	
+
+	.contact-form {
+		width: 50%;		
+	}
+
+	.contact-details {
+		margin-left: 50px;
+	}
+
+}
