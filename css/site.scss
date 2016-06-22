@@ -223,8 +223,8 @@ hr {
 .grid-container {			
 	height: 1500px;
 	display: flex;
-	
-	flex-wrap: wrap;	
+	flex-direction: column;
+	flex-wrap: wrap;
 	justify-content: center;		
 	width: 90vw;	
 	margin-left: auto;
@@ -237,10 +237,11 @@ hr {
 	flex: 1 1 auto;
 	margin-bottom: 100px;  	 
   	margin-right: 16px;  	  		
-	background: $banner-color; 		
+	background: $banner-color; 	
+	width: 40vw; 	
 	padding-left: 5%; 
     padding-right: 5%;        	 	
- 	max-width: 600px;
+ 	max-width: 600px; 	
  }
 
 .grid-item-content{
@@ -273,11 +274,18 @@ hr {
 	.grid-container {
 		flex-direction: row;
 	}
+
+	.grid-item {
+		width: 60vw;
+	}
 }
 
 @media (min-width: 800px) {
 	.grid-container {
-		flex-direction: column;
+		flex-direction: column;		
+	}
+
+	.grid-item {
 		width: 40vw; 	
 	}
 }
@@ -334,16 +342,10 @@ hr {
 	padding: 32px;
 }
 
-.contact-details {
-	margin-left: 50px;
+.contact-details {	
 	text-align: left;
 	width: auto;
 	/*border: 1px solid blue;*/
-}
-
-.contact-form {
-	width: 50%;	
-	/*border: 1px solid red;*/
 }
 
 .contact-content {	
@@ -372,9 +374,44 @@ hr {
 	border-radius: 0px;
 }
 
-
 //HOWTO: change input placeholder color in bootstrap: http://stackoverflow.com/a/20774043/1742518
 .form-control::-webkit-input-placeholder { color: $brand-primary; }
 .form-control:-moz-placeholder { color: $brand-primary; }
 .form-control::-moz-placeholder { color: $brand-primary; }
 .form-control:-ms-input-placeholder { color: $brand-primary; }
+
+
+
+@media (min-width: 300px) {
+	.contact-content {
+		flex-direction: column;			
+		margin: 0px;					
+	}	
+	
+	.contact-details {
+		margin-left: 0px;
+	}
+
+	.contact-form {
+		width: 60vw;
+		margin-left: 0px;		
+	}
+}
+
+@media (min-width: 800px) {
+	.contact-content {
+		flex-direction: row;		
+		margin-top: 32px;
+		margin-left: auto;
+		margin-right: auto;
+	}	
+
+	.contact-form {
+		width: 50%;		
+	}
+
+	.contact-details {
+		margin-left: 50px;
+	}
+
+}
