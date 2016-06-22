@@ -3,6 +3,7 @@
 
 
 //HOWTO: align something center horizontally and bottom vertically: http://stackoverflow.com/a/299929/1742518
+//HOWTO: responsive font size: https://css-tricks.com/viewport-sized-typography/
 
 @import "variables";
 @import "bootstrap";
@@ -12,21 +13,23 @@
 h1 {
 	font-family: main-font, Verdana;
 	margin: 0 auto;
+	font-size: 3.5vw;
 }
 
 h2 {
 	font-family: main-font, Verdana;
-	margin: 0 auto;
+	margin: 0 auto;	
 }
 
 h3 {
 	font-family: main-font, Verdana;
 	margin: 0 auto;
+	font-size: 2.5vw;
 }
 
 h4 {
 	font-family: main-font, Verdana;
-	margin: 0 auto;
+	margin: 0 auto;	
 }
 
 body {
@@ -40,7 +43,7 @@ body {
 }
 
 p {
-	font-size: 16pt;
+	font-size: 3vmin;
 	text-align: left;
 	font-family: main-font, Verdana;	
 }
@@ -148,7 +151,8 @@ hr {
 }
 
 .product-container{
-	display: flex;
+	display: flex;	
+	flex-wrap: wrap;
 	justify-content: space-around;
 	padding-top: 64px;
 	padding-bottom: 40px;
@@ -156,22 +160,58 @@ hr {
 
 }
 
-.product {
-	max-width: 20vw;
-}
-
-.product p {
-	margin-top: 32px;
-}
-
-.product hr {
-	margin-left: 0px;
-}
-
 .product-image{
 	width: $default-image-size;
 	height: $default-image-size;		
 	display: block;
+}
+
+@media (min-width: 300px) {
+	.product {		
+		max-width: 60vw;
+	}
+
+	.visibile-on-wide {
+		visibility: hidden;
+		height: 0px;
+		margin: 0px;
+		padding: 0px;
+	}
+
+	.product p {
+		margin-top: 16px;
+	}
+
+	.visible-on-narrow{
+		visibility: visible;		
+	}	
+}
+
+@media (min-width: 800px) {
+	.product {
+		max-width: 20vw;				
+	}
+
+	.visibile-on-wide {
+		visibility: visible;
+	}
+
+	.visibile-on-narrow {
+		visibility: hidden;
+		height: 0px;
+		margin: 0px;
+		padding: 0px;
+	}
+
+	.product p {
+		margin-top: 32px;
+	}	
+}
+
+
+
+.product hr {
+	margin-left: 0px;
 }
 
 /* company members */
@@ -229,6 +269,15 @@ hr {
 	color: $brand-primary;
 	margin-top: 20%;	
 }
+
+@media (min-width: 300px) {
+
+}
+
+@media (min-width: 800px) {
+	
+}
+
 
 /* twitter feed */
 
