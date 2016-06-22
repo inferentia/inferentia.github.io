@@ -223,8 +223,8 @@ hr {
 .grid-container {			
 	height: 1500px;
 	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
+	
+	flex-wrap: wrap;	
 	justify-content: center;		
 	width: 90vw;	
 	margin-left: auto;
@@ -237,11 +237,10 @@ hr {
 	flex: 1 1 auto;
 	margin-bottom: 100px;  	 
   	margin-right: 16px;  	  		
-	background: $banner-color; 	
-	width: 40vw; 	
+	background: $banner-color; 		
 	padding-left: 5%; 
     padding-right: 5%;        	 	
- 	max-width: 600px; 	
+ 	max-width: 600px;
  }
 
 .grid-item-content{
@@ -271,11 +270,16 @@ hr {
 }
 
 @media (min-width: 300px) {
-
+	.grid-container {
+		flex-direction: row;
+	}
 }
 
 @media (min-width: 800px) {
-	
+	.grid-container {
+		flex-direction: column;
+		width: 40vw; 	
+	}
 }
 
 
