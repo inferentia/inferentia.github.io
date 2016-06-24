@@ -16,16 +16,37 @@ h1 {
 	font-size: 3.5vw;
 }
 
-h2 {
-	font-family: main-font, Verdana;
-	margin: 0 auto;	
+@media (min-width: 300px) {
+	h1 {
+		font-size: 3.5vw;
+	}
 }
+
+@media (min-width: 800px) {
+	h1 {
+		font-size: 37pt;
+	}
+}
+
 
 h3 {
 	font-family: main-font, Verdana;
 	margin: 0 auto;
 	font-size: 2.5vw;
 }
+
+@media (min-width: 300px) {
+	h3 {
+		font-size: 2.5vw;	
+	}
+}
+
+@media (min-width: 800px) {
+	h3 {
+		font-size: 26pt;		
+	}
+}
+
 
 h4 {
 	font-family: main-font, Verdana;
@@ -43,9 +64,22 @@ body {
 }
 
 p {
-	font-size: 3vmin;
+	/*font-size: 3vmin;*/
+	
 	text-align: left;
 	font-family: main-font, Verdana;	
+}
+
+@media (min-width: 300px) {
+	p {
+		font-size: 3vmin;		
+	}
+}
+
+@media (min-width: 800px) {
+	p {
+		font-size: 18pt;		
+	}
 }
 
 a {
@@ -70,7 +104,6 @@ a:hover {
     /*border: 2px solid white;*/
 	border-radius: 150px;	
 }
-
 
 .color-primary {
 	color: $brand-primary;
@@ -161,10 +194,25 @@ hr {
 }
 
 .product-image{
-	width: $default-image-size;
-	height: $default-image-size;		
+	width: $default-image-size-large-media;
+	height: $default-image-size-large-media;		
 	display: block;
 }
+
+@media (min-width: 300px) {
+	.product-image{ 
+		width: $default-image-size-small-media;
+		height: $default-image-size-small-media;
+	}
+}
+
+@media (min-width: 800px) {
+	.product-image{ 
+		width: $default-image-size-large-media;
+		height: $default-image-size-large-media;
+	}
+}
+
 
 @media (min-width: 300px) {
 	.product {		
@@ -244,6 +292,8 @@ hr {
  	max-width: 600px; 	
  }
 
+ 
+
 .grid-item-content{
 	margin: 0 auto;		
 }
@@ -254,16 +304,34 @@ hr {
 
 .profile-image {
 	
-	width: $default-image-size;
-	height: $default-image-size;
+	width: $default-image-size-large-media;
+	height: $default-image-size-large-media;
 	position: relative; 	
-	top: -($default-image-size/2);
+	top: -($default-image-size-large-media/2);
 	display: block;	
 	
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 0px;
 }
+
+@media (min-width: 300px) {
+	.profile-image {
+		width: $default-image-size-small-media;
+		height: $default-image-size-small-media;
+		top: -($default-image-size-small-media/2);
+	}
+}
+
+@media (min-width: 800px) {
+	.profile-image {
+		width: $default-image-size-large-media;
+		height: $default-image-size-large-media;
+		top: -($default-image-size-large-media/2);
+	}
+}
+
+
 
 .employee-contact-details{
 	color: $brand-primary;
@@ -286,7 +354,7 @@ hr {
 	}
 
 	.grid-item {
-		width: 40vw; 	
+		width: 400px; 	
 	}
 }
 
