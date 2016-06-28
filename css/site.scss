@@ -268,8 +268,7 @@ hr {
 	margin-top: 100px;
 }
 
-.grid-container {			
-	height: 1500px;
+.grid-container {				
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
@@ -341,6 +340,7 @@ hr {
 @media (min-width: 300px) {
 	.grid-container {
 		flex-direction: row;
+		height: 3000px;
 	}
 
 	.grid-item {
@@ -351,6 +351,7 @@ hr {
 @media (min-width: 800px) {
 	.grid-container {
 		flex-direction: column;		
+		height: 1500px;
 	}
 
 	.grid-item {
